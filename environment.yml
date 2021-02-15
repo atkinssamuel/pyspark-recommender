@@ -1,0 +1,6 @@
+name: pyspark-recommender
+dependencies:
+  - python=3.8
+  - numpy
+  - matplotlib
+  - pyspark
