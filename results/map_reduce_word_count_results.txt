@@ -1,0 +1,51 @@
+The word "WILLIAM" appeared 171 times
+The word "SHAKESPEARE" appeared 123 times
+The word "LIBRARY" appeared 104 times
+The word "GUTENBERG" appeared 109 times
+The word "WORLD" appeared 461 times
+The word "COLLEGE" appeared 101 times
+The word "THIS" appeared 3248 times
+
+The top 20 words are as follows:
+#1: "the" appeared 13717 times
+#2: "and" appeared 12974 times
+#3: "i" appeared 9874 times
+#4: "of" appeared 9382 times
+#5: "to" appeared 9351 times
+#6: "a" appeared 6725 times
+#7: "you" appeared 6154 times
+#8: "my" appeared 5699 times
+#9: "that" appeared 5409 times
+#10: "in" appeared 5341 times
+#11: "d" appeared 4369 times
+#12: "is" appeared 4344 times
+#13: "not" appeared 3917 times
+#14: "for" appeared 3887 times
+#15: "with" appeared 3817 times
+#16: "his" appeared 3577 times
+#17: "it" appeared 3549 times
+#18: "s" appeared 3505 times
+#19: "me" appeared 3461 times
+#20: "be" appeared 3331 times
+
+The bottom 20 words are as follows:
+#1: "restrictions" appeared 1 time
+#2: "online" appeared 1 time
+#3: "www" appeared 1 time
+#4: "org" appeared 1 time
+#5: "copyrighted" appeared 1 time
+#6: "details" appeared 1 time
+#7: "guidelines" appeared 1 time
+#8: "september" appeared 1 time
+#9: "release" appeared 1 time
+#10: "january" appeared 1 time
+#11: "encoding" appeared 1 time
+#12: "produced" appeared 1 time
+#13: "cooperation" appeared 1 time
+#14: "cdroms" appeared 1 time
+#15: "releases" appeared 1 time
+#16: "implications" appeared 1 time
+#17: "cooperate" appeared 1 time
+#18: "shareware" appeared 1 time
+#19: "materials" appeared 1 time
+#20: "provisions" appeared 1 time

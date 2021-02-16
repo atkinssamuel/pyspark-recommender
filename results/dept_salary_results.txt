@@ -1,0 +1,5 @@
+The individuals in the Sales department were paid a total of $3,488,491
+The individuals in the Research department were paid a total of $3,328,284
+The individuals in the Developer department were paid a total of $3,221,394
+The individuals in the QA department were paid a total of $3,360,624
+The individuals in the Marketing department were paid a total of $3,158,450
