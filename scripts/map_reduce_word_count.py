@@ -3,13 +3,12 @@ import re
 
 
 def word_formatter(line):
-    return re.findall(r'\b[a-z]{1,15}\b', line[0].lower())
+    return re.findall(r'\b[a-zA-Z]{1,15}\b', line[0])
 
 
 if __name__ == "__main__":
     shakespeare_path = "data/shakespeare.txt"
-    desired_words = set([word.lower() for word in
-                         ["SHAKESPEARE", "GUTENBERG", "WILLIAM", "LIBRARY", "COLLEGE", "WORLD", "THIS"]])
+    desired_words = {"SHAKESPEARE", "GUTENBERG", "WILLIAM", "LIBRARY", "COLLEGE", "WORLD", "THIS"}
 
     spark = SparkSession.builder.appName("word_count").getOrCreate()
     words = spark.read.text(shakespeare_path).rdd.flatMap(word_formatter)
@@ -26,7 +25,7 @@ if __name__ == "__main__":
     bottom_20 = word_counts_by_count.sortByKey(ascending=True).take(20)
 
     for desired_word_tuple in desired_words_count_filtered:
-        print("The word \"{}\" appeared {} times".format(desired_word_tuple[0].upper(), desired_word_tuple[1]))
+        print("The word \"{}\" appeared {} times".format(desired_word_tuple[0], desired_word_tuple[1]))
 
     print("\nThe top 20 words are as follows:")
     for i in range(len(top_20)):

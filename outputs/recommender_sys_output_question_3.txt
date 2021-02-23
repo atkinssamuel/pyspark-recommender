@@ -1,10 +1,10 @@
-C:\Users\purpl\miniconda3\envs\pyspark-recommender\python.exe C:/Users/purpl/projects/pyspark-recommender/scripts/map_reduce_word_count.py
+C:\Users\purpl\miniconda3\envs\pyspark-recommender\python.exe C:/Users/purpl/projects/pyspark-recommender/scripts/recommender_sys.py
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/C:/Users/purpl/miniconda3/envs/pyspark-recommender/Lib/site-packages/pyspark/jars/spark-unsafe_2.12-3.0.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-21/02/22 18:48:44 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+21/02/22 20:40:29 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
 java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
 	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:382)
 	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:397)
@@ -32,61 +32,22 @@ java.io.IOException: Could not locate executable null\bin\winutils.exe in the Ha
 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1007)
 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1016)
 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
-21/02/22 18:48:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/02/22 20:40:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-21/02/22 18:48:56 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
-The word "GUTENBERG" appeared 100 times
-The word "COLLEGE" appeared 98 times
-The word "LIBRARY" appeared 99 times
-The word "SHAKESPEARE" appeared 101 times
-The word "THIS" appeared 104 times
-The word "WORLD" appeared 98 times
-The word "WILLIAM" appeared 128 times
+21/02/22 20:40:35 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/02/22 20:40:35 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/02/22 20:40:35 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+21/02/22 20:40:35 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+RMSE = 1.047 with [0.75, 0.25] Train/Test split
 
-The top 20 words are as follows:
-#1: "the" appeared 11412 times
-#2: "I" appeared 9714 times
-#3: "and" appeared 8942 times
-#4: "of" appeared 7968 times
-#5: "to" appeared 7742 times
-#6: "a" appeared 5796 times
-#7: "you" appeared 5360 times
-#8: "my" appeared 4922 times
-#9: "in" appeared 4803 times
-#10: "d" appeared 4365 times
-#11: "that" appeared 3864 times
-#12: "And" appeared 3735 times
-#13: "is" appeared 3722 times
-#14: "not" appeared 3595 times
-#15: "me" appeared 3448 times
-#16: "s" appeared 3398 times
-#17: "his" appeared 3278 times
-#18: "with" appeared 3221 times
-#19: "it" appeared 3078 times
-#20: "be" appeared 2986 times
+21/02/22 20:40:45 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+MSE = 1.013 with [0.75, 0.25] Train/Test split
 
-The bottom 20 words are as follows:
-#1: "anyone" appeared 1 time
-#2: "restrictions" appeared 1 time
-#3: "License" appeared 1 time
-#4: "online" appeared 1 time
-#5: "www" appeared 1 time
-#6: "gutenberg" appeared 1 time
-#7: "org" appeared 1 time
-#8: "COPYRIGHTED" appeared 1 time
-#9: "Details" appeared 1 time
-#10: "guidelines" appeared 1 time
-#11: "Title" appeared 1 time
-#12: "Author" appeared 1 time
-#13: "Posting" appeared 1 time
-#14: "September" appeared 1 time
-#15: "EBook" appeared 1 time
-#16: "Release" appeared 1 time
-#17: "January" appeared 1 time
-#18: "Character" appeared 1 time
-#19: "encoding" appeared 1 time
-#20: "START" appeared 1 time
+RMSE = 1.085 with [0.8, 0.2] Train/Test split
+
+MSE = 0.974 with [0.8, 0.2] Train/Test split
+
 
 Process finished with exit code 0

@@ -1,0 +1,121 @@
+C:\Users\purpl\miniconda3\envs\pyspark-recommender\python.exe C:/Users/purpl/projects/pyspark-recommender/scripts/recommender_sys.py
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/C:/Users/purpl/miniconda3/envs/pyspark-recommender/Lib/site-packages/pyspark/jars/spark-unsafe_2.12-3.0.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/02/22 20:27:27 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:382)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:397)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:390)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:274)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:262)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:807)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:777)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:650)
+	at org.apache.spark.util.Utils$.$anonfun$getCurrentUserName$1(Utils.scala:2412)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2412)
+	at org.apache.spark.SecurityManager.<init>(SecurityManager.scala:79)
+	at org.apache.spark.deploy.SparkSubmit.secMgr$lzycompute$1(SparkSubmit.scala:368)
+	at org.apache.spark.deploy.SparkSubmit.secMgr$1(SparkSubmit.scala:368)
+	at org.apache.spark.deploy.SparkSubmit.$anonfun$prepareSubmitEnvironment$8(SparkSubmit.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:376)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:871)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:180)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:203)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:90)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1007)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1016)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+21/02/22 20:27:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/02/22 20:27:33 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/02/22 20:27:33 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/02/22 20:27:33 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+21/02/22 20:27:33 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+21/02/22 20:27:46 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+RMSE = 1.021 & Accuracy = 45.23% with [0.75, 0.25] Train/Test split
+Prediction Summary:
++-------+------------------+------------------+------------------+------------------+
+|summary|           movieId|            rating|            userId|        prediction|
++-------+------------------+------------------+------------------+------------------+
+|  count|               409|               409|               409|               409|
+|   mean| 49.97066014669927|  1.80440097799511|14.163814180929096|1.5014046736057018|
+| stddev|28.196076764441454|1.1593102224011254| 8.436037375026123|0.7623964320002299|
+|    min|                 0|                 1|                 0|      -0.068828106|
+|    max|                99|                 5|                29|         4.6778164|
++-------+------------------+------------------+------------------+------------------+
+
++----------+
+|prediction|
++----------+
+|0.45544553|
+| 1.5363644|
+| 1.1170142|
+| 1.0456172|
+| 1.8243765|
+| 1.0101541|
+|0.97592133|
+| 1.0299788|
+|   1.39473|
+| 1.0714704|
+| 0.9807167|
+| 0.9704875|
+| 1.4610391|
+| 2.4848142|
+| 2.4638247|
+| 0.8294847|
+|0.08758587|
+| 1.3699824|
+|0.63840675|
+| 1.7418337|
++----------+
+only showing top 20 rows
+
+RMSE = 1.077 & Accuracy = 46.15% with [0.8, 0.2] Train/Test split
+Prediction Summary:
++-------+------------------+------------------+------------------+------------------+
+|summary|           movieId|            rating|            userId|        prediction|
++-------+------------------+------------------+------------------+------------------+
+|  count|               299|               299|               299|               299|
+|   mean| 45.32107023411371| 1.862876254180602|13.538461538461538|1.5772097781549728|
+| stddev|29.141818084444605|1.2576983430932391| 8.571512770931427|0.8170460983012805|
+|    min|                 0|                 1|                 0|        0.15136692|
+|    max|                99|                 5|                29|         4.8983245|
++-------+------------------+------------------+------------------+------------------+
+
++----------+
+|prediction|
++----------+
+| 1.2023145|
+| 1.7353871|
+| 1.9104246|
+| 1.4926156|
+|  2.484839|
+|0.87266463|
+| 1.3010404|
+| 0.6278953|
+| 1.0593654|
+| 1.7290851|
+| 2.3464236|
+|0.79799676|
+| 0.8437349|
+| 0.6881512|
+| 0.7799513|
+|0.50047743|
+| 0.4663005|
+| 1.8974373|
+|  2.089991|
+| 1.3488197|
++----------+
+only showing top 20 rows
+
+
+Process finished with exit code 0

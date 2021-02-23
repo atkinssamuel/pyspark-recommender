@@ -1,0 +1,4 @@
+RMSE = 1.047 with [0.75, 0.25] Train/Test split
+MSE = 1.013 with [0.75, 0.25] Train/Test split
+RMSE = 1.085 with [0.8, 0.2] Train/Test split
+MSE = 0.974 with [0.8, 0.2] Train/Test split
