@@ -4,7 +4,7 @@ WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/C:
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-21/02/22 18:42:27 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+21/02/23 00:09:54 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
 java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
 	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:382)
 	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:397)
@@ -32,7 +32,7 @@ java.io.IOException: Could not locate executable null\bin\winutils.exe in the Ha
 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1007)
 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1016)
 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
-21/02/22 18:42:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/02/23 00:09:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
@@ -58,9 +58,28 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 |     29|               2.4|
 |     18|               2.4|
 |     52| 2.357142857142857|
-|     62|              2.25|
+|     53|              2.25|
 +-------+------------------+
 only showing top 10 rows
 
++------+------------------+
+|userId|       avg(rating)|
++------+------------------+
+|    11|2.2857142857142856|
+|    26| 2.204081632653061|
+|    22|2.1607142857142856|
+|    23|2.1346153846153846|
+|     2|2.0652173913043477|
+|    17|1.9565217391304348|
+|     8|1.8979591836734695|
+|    24|1.8846153846153846|
+|    12|1.8545454545454545|
+|     3|1.8333333333333333|
++------+------------------+
+only showing top 10 rows
+
+SUCCESS: The process with PID 6996 (child process of PID 884) has been terminated.
+SUCCESS: The process with PID 884 (child process of PID 16832) has been terminated.
+SUCCESS: The process with PID 16832 (child process of PID 20692) has been terminated.
 
 Process finished with exit code 0

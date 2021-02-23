@@ -25,10 +25,11 @@ if __name__ == "__main__":
 
     df = spark.read.option("header", "true").csv("data/movies.csv", schema=schema)
 
-    question = 5
+    question = 1
     if question == 1:
         df.describe().show()
         df.groupBy("movieId").mean("rating").sort(F.col("avg(rating)").desc()).show(10)
+        df.groupBy("userId").mean("rating").sort(F.col("avg(rating)").desc()).show(10)
     elif question == 2:
         split_list = [[0.75, 0.25], [0.8, 0.2]]
         for split in split_list:
@@ -62,34 +63,34 @@ if __name__ == "__main__":
 
                 print(f"{metric.upper()} = {round(metric_res, 3)} with {split} Train/Test split\n")
     elif question == 4 or question == 5:
-        split = [0.75, 0.25]
-        training, test = df.randomSplit(split)
-        als = ALS(userCol="userId", itemCol="movieId", ratingCol="rating", coldStartStrategy="drop")
-        reg_evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating", predictionCol="prediction")
+        split_list = [[0.75, 0.25], [0.8, 0.2]]
+        for split in split_list:
+            training, test = df.randomSplit(split)
+            als = ALS(userCol="userId", itemCol="movieId", ratingCol="rating", coldStartStrategy="drop")
+            reg_evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating", predictionCol="prediction")
 
-        parameters = ParamGridBuilder() \
-            .addGrid(als.rank, [5, 10, 20, 40, 80])\
-            .addGrid(als.regParam, [0.1, 0.01, 0.001])\
-            .addGrid(als.alpha, [2.0, 3.0])\
-            .build()
+            parameters = ParamGridBuilder() \
+                .addGrid(als.rank, [5, 10, 20, 40, 80])\
+                .addGrid(als.regParam, [0.1, 0.01, 0.001])\
+                .addGrid(als.alpha, [2.0, 3.0])\
+                .build()
 
-        # simple_parameters = ParamGridBuilder() \
-        #     .addGrid(als.rank, [5]).addGrid(als.regParam, [0.1]).addGrid(als.alpha, [2.0]).build()
+            # simple_parameters = ParamGridBuilder() \
+            #     .addGrid(als.rank, [5]).addGrid(als.regParam, [0.1]).addGrid(als.alpha, [2.0]).build()
 
-        train_valid_split = TrainValidationSplit(estimator=als, estimatorParamMaps=parameters, evaluator=reg_evaluator)
-        cross_validator = CrossValidator(estimator=als, estimatorParamMaps=parameters, evaluator=reg_evaluator,
-                                         numFolds=3)
+            cross_validator = CrossValidator(estimator=als, estimatorParamMaps=parameters, evaluator=reg_evaluator,
+                                             numFolds=3)
 
-        cv_model = cross_validator.fit(training)
+            cv_model = cross_validator.fit(training)
 
-        predictions = cv_model.bestModel.transform(test)
+            predictions = cv_model.bestModel.transform(test)
 
-        metric_res = reg_evaluator.evaluate(predictions)
+            metric_res = reg_evaluator.evaluate(predictions)
 
-        print(f"Optimal Model:\n"
-              f"rank = {cv_model.bestModel.rank}\n"
-              f"RMSE = {round(metric_res, 3)}\n"
-              f"Train/Test split = {split}\n")
+            print(f"Optimal Model:\n"
+                  f"rank = {cv_model.bestModel.rank}\n"
+                  f"RMSE = {round(metric_res, 3)}\n"
+                  f"Train/Test split = {split}\n")
 
     if question == 5:
         movies_pd = pd.read_csv("data/movies.csv")
