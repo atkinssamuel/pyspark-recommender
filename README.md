@@ -4,7 +4,7 @@ The applications in this project helped me gain practical experience with big-da
 
 In this repository, I implement simple map-reduce programs for counting odd/even integers, counting words in a text document, and calculating simple properties present in a supplied large data-frame. 
 
-I also implement a large-scale collaborative-filtering recommender system. This system takes in user rating data pertaining to various movie IDs and models the relationship between the users by utilizing the collaborative filtering approach with alternating least squares (ALS). For details about the results and application insights, see the report.pdf file.
+I also implement a large-scale collaborative-filtering recommender system. This system takes in user rating data pertaining to various movie IDs and models the relationship between the users by utilizing the collaborative filtering approach with alternating least squares (ALS). For details about the results and application insights, see the ```report.pdf``` file.
 
 ## Setup
 ### Organization
