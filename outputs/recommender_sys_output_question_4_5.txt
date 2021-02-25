@@ -4,7 +4,7 @@ WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/C:
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-21/02/25 15:09:54 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+21/02/25 15:42:47 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
 java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
 	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:382)
 	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:397)
@@ -32,44 +32,44 @@ java.io.IOException: Could not locate executable null\bin\winutils.exe in the Ha
 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1007)
 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1016)
 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
-21/02/25 15:09:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/02/25 15:42:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-21/02/25 15:10:01 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
-21/02/25 15:10:01 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
-21/02/25 15:10:01 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
-21/02/25 15:10:01 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
-21/02/25 15:10:09 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/02/25 15:42:54 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+21/02/25 15:42:54 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+21/02/25 15:42:54 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+21/02/25 15:42:54 WARN LAPACK: Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+21/02/25 15:42:59 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
 Optimal Model:
-rank = 40
-RMSE = 1.03
+rank = 10
+RMSE = 1.005
 Train/Test split = [0.75, 0.25]
 
 Optimal Model:
-rank = 20
-RMSE = 1.145
+rank = 10
+RMSE = 0.937
 Train/Test split = [0.8, 0.2]
 
 Top 15 Predictions for User 11
 +-------+------+----------+
 |movieId|userId|prediction|
 +-------+------+----------+
-|     32|    11| 4.6939106|
-|     18|    11| 4.6461654|
-|     23|    11| 4.6010566|
-|     30|    11| 4.5718412|
-|     48|    11| 4.3858476|
-|     69|    11| 4.3808136|
-|     13|    11|  3.741345|
-|     90|    11|  3.698012|
-|     38|    11| 3.5951536|
-|     50|    11| 3.5641413|
-|     19|    11| 3.5172505|
-|     80|    11| 2.9314494|
-|     27|    11| 2.7694223|
-|     71|    11|  2.659799|
-|     72|    11| 2.6547766|
+|     93|    11| 3.9842124|
+|      8|    11| 3.8244433|
+|     49|    11|  3.264492|
+|     55|    11| 3.2641935|
+|     74|    11|  3.005236|
+|     65|    11| 2.9819279|
+|     46|    11| 2.8709044|
+|     34|    11| 2.7628598|
+|      7|    11| 2.6040003|
+|     73|    11| 2.4915605|
+|     17|    11| 2.4541497|
+|     33|    11|  2.368081|
+|     83|    11|  2.295788|
+|     54|    11|   2.17036|
+|     96|    11|  2.097736|
 +-------+------+----------+
 only showing top 15 rows
 
@@ -77,26 +77,26 @@ Top 15 Predictions for User 23
 +-------+------+----------+
 |movieId|userId|prediction|
 +-------+------+----------+
-|     32|    23|  4.683198|
-|     49|    23|  4.471251|
-|     48|    23| 4.3312244|
-|     65|    23| 4.1654153|
-|     27|    23| 4.1590443|
-|     23|    23| 3.8548448|
-|     64|    23| 3.7981944|
-|     30|    23| 3.6460156|
-|     13|    23|  3.595697|
-|     50|    23| 3.5757296|
-|     18|    23| 2.8851573|
-|     68|    23| 2.8411543|
-|     73|    23| 2.7169807|
-|     36|    23| 2.6883788|
-|     87|    23| 2.5272307|
+|     46|    23|  5.136301|
+|     17|    23|  4.541462|
+|     90|    23| 4.4621544|
+|     94|    23| 3.7920694|
+|     20|    23|   3.64995|
+|      7|    23| 3.3043923|
+|     16|    23| 2.8742661|
+|     91|    23| 2.7544537|
+|     79|    23|  2.546895|
+|     56|    23|  2.408853|
+|     81|    23| 2.4042418|
+|     98|    23| 2.1439312|
+|     93|    23| 2.1075087|
+|     19|    23| 1.8905573|
+|      9|    23| 1.7618334|
 +-------+------+----------+
 only showing top 15 rows
 
-SUCCESS: The process with PID 18344 (child process of PID 17648) has been terminated.
-SUCCESS: The process with PID 17648 (child process of PID 3036) has been terminated.
-SUCCESS: The process with PID 3036 (child process of PID 11668) has been terminated.
+SUCCESS: The process with PID 8792 (child process of PID 14432) has been terminated.
+SUCCESS: The process with PID 14432 (child process of PID 1400) has been terminated.
+SUCCESS: The process with PID 1400 (child process of PID 13476) has been terminated.
 
 Process finished with exit code 0

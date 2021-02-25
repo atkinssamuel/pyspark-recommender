@@ -106,23 +106,31 @@ if __name__ == "__main__":
             return max(v1, v2)
 
 
-        def get_unseen(line):
-            if int(line[1]) == 0:
+        def get_unseen_11(line):
+            # if seen:
+            if int(line[1]) == 11:
                 return -1, 0
-            return line[0], line[1]
+            # else:
+            return line[0], 11
 
+        def get_unseen_23(line):
+            # if seen:
+            if int(line[1]) == 23:
+                return -1, 0
+            # else:
+            return line[0], 23
 
         simple_schema = StructType([StructField("movieId", IntegerType(), True),
                                     StructField("userId", IntegerType(), True)])
 
         df_11_a = df.rdd.map(get_11).reduceByKey(max_reduce)
-        df_11_b = df_11_a.map(get_unseen).reduceByKey(max_reduce).collect()
+        df_11_b = df_11_a.map(get_unseen_11).reduceByKey(max_reduce).collect()
 
         df_11 = spark.createDataFrame(df_11_b, schema=simple_schema)
         df_11 = df_11.filter((df_11.movieId != -1))
 
         df_23_a = df.rdd.map(get_23).reduceByKey(max_reduce)
-        df_23_b = df_23_a.map(get_unseen).reduceByKey(max_reduce).collect()
+        df_23_b = df_23_a.map(get_unseen_23).reduceByKey(max_reduce).collect()
 
         df_23 = spark.createDataFrame(df_23_b, schema=simple_schema)
         df_23 = df_23.filter((df_23.movieId != -1))
